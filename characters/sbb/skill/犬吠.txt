@@ -1,0 +1,18 @@
+skill={
+    trigger: {
+        player: "damageEnd",
+    },
+    forced: true,
+    frequent: true,
+    filter(event) {
+        return event.num > 0;
+    },
+    async content(event, trigger, player) {
+        await player.draw(1);
+        var card = get.cardPile(function (card) {
+            return card.name == "sha";
+        });
+           if (card) player.gain(card, "gain2");
+           else player.chat("孩子们牌堆里怎么没有杀？");
+    },
+}

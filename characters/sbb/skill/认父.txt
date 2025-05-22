@@ -1,0 +1,33 @@
+skill={
+    unique: true,
+    enable: "chooseToUse",
+    mark: true,
+    skillAnimation: true,
+    limited: true,
+    animationColor: "orange",
+    init(player) {
+        player.storage.认父 = false;
+    },
+    filter(event, player) {
+        if (player.storage.认父) return false;
+        if (event.type == "dying") {
+            if (player != event.dying) return false;
+            return true;
+        }
+        return false;
+    },
+    async content(event, trigger, player) {
+        player.awakenSkill("认父");
+        player.storage.认父 = true;
+        await player.link(false);
+        await player.turnOver(false);
+        if (player.hp < player.maxHp) {
+            await player.recover(player.maxHp - player.hp);
+        }
+        // await player.chat("我是你们的儿子！");
+        await player.chat("你们的都是我的父亲！");
+    },
+    intro: {
+        content: "limited",
+    },
+}

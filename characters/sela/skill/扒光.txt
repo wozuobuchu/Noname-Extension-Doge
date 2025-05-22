@@ -1,0 +1,11 @@
+skill={
+    enable: "phaseUse",
+    usable: 1,
+    filterTarget: function(card,player,target){
+        return ((player!=target)&&(target.countCards("he")>0));
+    },
+    content: function(){
+        target.chooseToDiscard('he',target.countCards("he"),true);
+        player.loseHp(1);
+    },
+}

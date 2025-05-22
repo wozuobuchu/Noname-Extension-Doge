@@ -1,0 +1,17 @@
+skill={
+    enable: "phaseUse",
+    usable: 1,
+    filterTarget: true,
+    selectTarget: function(){
+        var player = _status.event.player;
+        return [1,3];
+    },
+    multitarget: true,
+    multiline: true,
+    line: "fire",
+    content: function(){
+        for (let i=0, len = targets.length; i<len; ++i) {
+            targets[i].useCard({ name: "juedou", isCard: true }, player, "noai");
+        }
+    },
+}

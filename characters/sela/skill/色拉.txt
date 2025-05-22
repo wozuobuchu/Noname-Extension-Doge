@@ -1,0 +1,18 @@
+skill={
+    trigger: {
+        player: "phaseBegin",
+    },
+    filter(event, player) {
+         var n = game.countPlayer(
+             function(current) {
+                 return current.hasSex("female");
+             }
+         );
+        return (n>0);
+    },
+    forced: true,
+    content: function(){
+        player.draw(1);
+        player.recover(1);
+    },
+}
