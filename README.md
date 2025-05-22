@@ -11,3 +11,7 @@ password:    vsw2 <br>
 3. 解压 [ noname-yuri-win32-x64.zip ] 得到无名杀Windows客户端 <br>
 4. 将 [无名杀完整包_v0.10.17.zip] 中对应文件覆盖到 ".\无名杀-win32-x64\resources\app\" 即可完成安装游戏字体卡面配音等素材 <br>
 5. 将 [noname.core_v1.10.17.1.zip] 中对应文件覆盖到 ".\无名杀-win32-x64\resources\app\" 即可更新游戏 <br>
+## How To Setup Extension
+1. 随便进一个游戏模式 <br>
+2. 依次点击 [ 选项-扩展-获取扩展-导入扩展 ] 等待导入完成后重启游戏 <br>
+3. 在 [ 选项-武将-"扩展名" ] 中开启 "仅点将可用" 避免让没有编写AI的扩展将被AI使用 <br>
